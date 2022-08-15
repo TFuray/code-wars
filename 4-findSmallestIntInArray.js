@@ -11,8 +11,24 @@ You can assume, for the purpose of this kata, that the supplied array will not b
 let test1 = [34, 15, 88, 2];
 let test2 = [34, -345, -1, 100];
 
+    // function findSmallestInt(args) {
+    //     let min = args[0];
+    //     for(let i = 0; i < args.length; i++) {
+    //        if(args[i] < min){
+    //         min = args[i];
+    //        }
+    //     } return min;
+    // }
+
+
+
 class SmallestIntegerFinder {
     findSmallestInt(args) {
-        
+        let min = args[0];
+        for (let i = 0; i < args.length; i++) {
+            if (args[i] < min) {
+                min = args[i];
+            }
+        } return min;
     }
 }
