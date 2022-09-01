@@ -14,8 +14,10 @@
 // validateSequence([1, 2, 4, 8, 16, 32, 64]) === false
 // validateSequence([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]) === false
 
-let sample = [1, 2, 3, 4, 5, 9, 32]
+// test sequence
+let sample = [1, 2, 3, 4, 5, 6, 7, 8]
 
+// create new array with sequence
 function check(array){
     let newOnes = []
     for(let i = 1; i<array.length; i++){
@@ -24,9 +26,13 @@ function check(array){
     return newOnes;
 }
 
+// check new array has same sequence 
 const allEqual = arr => arr.every(v => v === arr[0]);
 
+// put both together and return true if numbers follow sequence
 function validateSequence(x) {
     let test = check(x);
     return allEqual(test)   
 }
+
+console.log(validateSequence(sample));
