@@ -11,8 +11,18 @@ const test1 = [12, 10, 8, 12, 7, 6, 4, 10, 12]
 const test2 = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]
 
 
-function highestRank(arr) {
-    
+function countObject(arr) {
+    let countObject = arr.reduce(function (count,currentValue){
+        return (
+            count[currentValue] ? ++count[currentValue] : (count[currentValue] = 1),
+            count
+        );
+    },
+   {});
+   return countObject
 }
 
-console.log(highestRank(test1));
+function highestRank(arr){
+    arr = countObject(arr)
+    
+}
