@@ -7,8 +7,8 @@
 //     [12, 10, 8, 12, 7, 6, 4, 10, 12]-- > 12
 //     [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]-- > 12
 //     [12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]-- > 3
-const test1 = [12, 10, 8, 12, 7, 6, 4, 10, 12]
-const test2 = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]
+const test1 = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]
+const test2 = [12, 10, 8, 7, 6, 4, 4, 10, 10]
 
 
 function countObject(arr) {
@@ -23,6 +23,9 @@ function countObject(arr) {
 }
 
 function highestRank(arr){
-    arr = countObject(arr)
-    
+    let sorted = countObject(arr)
+    keysSorted = Object.keys(sorted).sort(function(a,b){return sorted[b]-sorted[a]})
+    return Number(keysSorted[0])
 }
+
+console.log(highestRank(test2))
