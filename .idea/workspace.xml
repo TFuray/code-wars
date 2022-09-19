@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5777fab7-3913-406f-8d75-c8fb593b01b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/code-wars.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/20-sumOfNthNumber.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/18-arrayDiff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/18-dropWhilefunc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeWarsMaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/codeWarsMaster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempCodeRunnerFile.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662486441181</updated>
       <workItem from="1662486444938" duration="217000" />
+      <workItem from="1663102748568" duration="38000" />
     </task>
     <servers />
   </component>
