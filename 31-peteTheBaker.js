@@ -13,16 +13,17 @@ let recipe = { flour: 500, sugar: 200, eggs: 1 }
 let available = { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }
 
 
-function cakes(recipe, available) {
-    let recipeIng = Object.keys(recipe)
-    let availableIng = Object.keys(available)
-    let needed = []
-    recipeIng.forEach((element) => {
-        availableIng.includes(element)
-        needed.push(element)
-    })
+// function cakes(recipe, available) {
+//     let recipeIng = Object.keys(recipe)
+//     let availableIng = Object.keys(available)
+//     let needed = []
+//     needed.forEach((elm) =>{
+//         if(recipeIng.includes(elm){
+
+//         })
+//     })
     
-}
+// }
 
 console.log(Object.keys(recipe))
 
