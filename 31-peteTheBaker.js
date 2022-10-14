@@ -9,7 +9,24 @@
 // must return 0
 // cakes({ apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100 }, { sugar: 500, flour: 2000, milk: 2000 });
 
+let recipe = { flour: 500, sugar: 200, eggs: 1 }
+let available = { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }
+
 
 function cakes(recipe, available) {
-    return
+    let recipeIng = Object.keys(recipe)
+    let availableIng = Object.keys(available)
+    let needed = []
+    recipeIng.forEach((element) => {
+        availableIng.includes(element)
+        needed.push(element)
+    })
+    
 }
+
+console.log(Object.keys(recipe))
+
+// let isEnough = (recipe, available) => {
+//     return JSON.stringify(recipe) <= JSON.stringify(available)
+// }
+// return isEnough(recipe, available)
