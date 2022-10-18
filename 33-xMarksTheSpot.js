@@ -57,16 +57,17 @@ let test3 = [
 
 const xMarksTheSpot = (input) => {
   let count = 0
-  let index1
-  let index2
-  console.log(input)
-  input.forEach(element => {
-    if(element == 'x'){
-      count ++
-    }})
+  let coords = []
+  for(let i = 0; i<input.length;i++){
+    for(let j =0; j<input[i].length; j++){
+      if(input[i][j] == 'x'){
+        count++
+        coords.push(i, j)
+      }
+    }
+  }
   if(count > 1 || count < 1){
       return []
-    }
-
+    }else{return coords}
 }
 console.log(xMarksTheSpot(test2))
