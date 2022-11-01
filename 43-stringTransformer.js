@@ -12,3 +12,12 @@
 
 let test = "Example Input"
 
+function transformStr(str){
+    let rev = str.split(' ').reverse().join(' ')
+    let final = rev.split('').map(l => l === l.toUpperCase() ? l.toLowerCase(): l.toUpperCase()).join('')
+    return final
+}
+
+console.log(transformStr(test))
+
+console.log(transformStr("Example Input"), 'iNPUT eXAMPLE')
