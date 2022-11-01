@@ -6,11 +6,11 @@
 
 function reverseWords(str) {
     let revArray = []
-    for (let i = str.length -1; i >= 0; i--){
+    for (let i = str.length - 1; i >= 0; i--) {
         revArray.push(str[i])
     }
-    return revArray.join('')
+    return revArray.join("")
 }
-let test = 'The quick brown fox jumps over the lazy dog.'
+let test = "The quick brown fox jumps over the lazy dog."
 
-console.log(reverseWords(test));
+console.log(reverseWords(test))

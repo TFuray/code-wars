@@ -10,7 +10,5 @@
 // You may assume the input only contain English alphabet and spaces.
 
 
+let test = "Example Input"
 
-function stringTransformer(str) {
-    // Your code here
-}
