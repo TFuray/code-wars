@@ -12,3 +12,24 @@
 // findDeletedNumber([1,2,3,4,5], [3,4,1,5]), 2, 'Deletion')
 // findDeletedNumber([1,2,3,4,5,6,7,8,9], [1,9,7,4,6,2,3,8]), 5, 'Deletion')
 // findDeletedNumber([1,2,3,4,5,6,7,8,9], [5,7,6,9,4,8,1,2,3]), 0, 'No deletion')
+
+let array = [1,2,3,4,5,6,7,8,9]
+let arrayMixed = [1,9,7,4,6,2,3,8]
+
+
+function missingNum(arr, mixArr){
+    return arr.filter( n => mixArr.indexOf(n) === -1)[0] || 0
+}
+console.log(missingNum(array, arrayMixed))
+
+function missingNumTwo(arr, mixArr){
+    if(arr.length === mixArr.length){
+        return 0
+    }else{
+        let arrSum = arr.reduce((a,c)=>a+c,0)
+        let mixSum = mixArr.reduce((a,c)=>a+c,0)
+        return arrSum - mixSum
+    }
+}
+
+console.log(missingNumTwo(array, arrayMixed))
