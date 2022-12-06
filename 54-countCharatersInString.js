@@ -15,5 +15,5 @@ function count (str) {
       countObj[c] = 1
     }
   }
-  return {}
+  return countObj
 }
