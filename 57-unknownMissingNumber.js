@@ -13,3 +13,16 @@
 // 1 <= amount of missing  numbers <= 10  
 // amount of tests: 20
 // Enjoy it.
+
+
+
+function missNumsFinder (arr) {
+  let charMap = {}
+  missingNums = []
+  for(const char of arr){
+    charMap[char] = charMap[]
+  }
+}
+
+
+console.log(missNumbsFinder( [8, 10, 11, 7, 3, 15, 6, 14, 5, 12] ), [2, 4, 9, 13])
