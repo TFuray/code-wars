@@ -1,3 +1,4 @@
+// https://www.codewars.com/kata/5b559899f7e38620ef000803/train/javascript
 // We have a big list having values fom 1 to n, occurring only once but unordered with an unknown amount of missing values. The number n will be considered the maximum value of the array.
 
 // We have to output the missing numbers sorted by value. Example:
