@@ -3,9 +3,9 @@
 // 13K
 // 417
 // Companies
-// Given an array nums of size n, return the majority element.
+// Given an numsay nums of size n, return the majority element.
 
-// The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+// The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the numsay.
 
  
 
@@ -27,3 +27,22 @@
  
 
 // Follow-up: Could you solve the problem in linear time and in O(1) space?
+
+var majorityElement = function (nums) {
+  let elem = {},
+      count = 0,
+      majElem = nums[0]
+
+  for(const num of nums){
+    elem[num] = elem[num] + 1 || 1
+  }
+
+  for(const n in elem){
+    if(elem[n] > count){
+      count = elem[n]
+      majElem = n
+    }
+  }
+  return majElem
+
+}
