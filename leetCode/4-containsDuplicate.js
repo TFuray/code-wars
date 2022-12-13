@@ -26,4 +26,18 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function (nums) {}
+var containsDuplicate = function (nums) {
+  let numsMap = {}
+  for(let i=0; i< nums.length; i++){
+    let num = nums[i]
+    if(numsMap[num]){
+      return true
+    }else{
+      numsMap[num] = true
+    }
+  }
+  return false
+}
+
+console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
+))
