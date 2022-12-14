@@ -27,12 +27,12 @@ function ransomNote(note, magazine){
 
   for(const word of magazineHash){
     magazineHash[word] = magazineHash[word] + 1 || 1
-    if(magazineHash[word] < 0) return false
   }
 
   for(const word of noteWords){
     if(magazineHash[word]){
-      magazineHash[word]--
+      magazineHash[word]--  
+      if(magazineHash[word] < 0) return false
     }else{
       possible = false
     }
