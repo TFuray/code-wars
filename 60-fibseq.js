@@ -21,23 +21,43 @@
 // Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
 
-function fib(n) {
-  let arr = [0,1]
-  for(let i=2; i<=n; i++){
-    arr[i] = arr[i-1] + arr[i-2]
-  }
-  return arr[n]
-}
+// function fib(n) {
+//   let arr = [0,1]
+//   for(let i=2; i<=n; i++){
+//     arr[i] = arr[i-1] + arr[i-2]
+//   }
+//   return arr[n]
+// }
 
-console.log(fib(13))
+// console.log(fib(13))
 
-function countDown(n){
-  if(n === 0){
-    console.log("Done")
+// // Recursion tree
+
+// function countDown(n){
+//   if(n === 0){
+//     console.log("Done")
+//   }else{
+//     console.log(n)
+//     countDown(n-1)
+//   }
+// }
+
+
+// countDown(555)
+
+
+const memo = {}
+function fib(n){
+  if(n <=1){
+    return n
+  }else if( memo[n] ){
+    return memo[n]
   }else{
-    console.log(n)
-    countDown(n-1)
+    let result = fib(n - 1 ) + fib(n - 2)
+    memo[n] = result
+    return result
   }
 }
 
-countDown(555)
+
+console.log(fib(5))
