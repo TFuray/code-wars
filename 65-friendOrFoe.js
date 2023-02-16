@@ -10,3 +10,11 @@
 // Note: keep the original order of the names in the output.
 
 
+function friend (friends) {
+  const filter = friends.filter(name => {
+    return name.length === 4
+  })
+  return filter
+}
+
+console.log(friend(['Ryan', 'Kieran', 'Jason', 'Yous']))
