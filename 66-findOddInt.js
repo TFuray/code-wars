@@ -9,7 +9,33 @@
 // [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
 // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
+
+
+const test = [1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]
+
+
+
+
+
+
 function findOdd (A) {
-  //happy coding!
-  return 0
+  let charMap = {}
+  count = 0
+  maxChar = null
+
+  for(const char of A){
+    charMap[char] = charMap[char] + 1 || 1
+  }
+
+  for(const char in charMap){
+    if(charMap[char] % 2 ==! 0){
+      count = charMap[char]
+      maxChar = char
+    }
+  }
+  return Number(maxChar)
 }
+
+
+console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]
+))
