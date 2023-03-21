@@ -57,7 +57,7 @@
 // :  -)
 
 
-var snakesAndLadders = function (board, dice) {
+function snakesAndLadders (board, dice) {
   let square = 0;
    dice = dice
   for (let die of dice) {
