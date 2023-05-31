@@ -36,8 +36,7 @@ function comp(array1, array2) {
   array1Sq= array1.map((number) => number * number)
   array1Sq.sort((a, b) => a-b)
   array2.sort((a, b) => a - b)
-  console.log(array1Sq)
-  console.log(array2)
+
   for (let i = 0; i < array1Sq.length; i++){
     if (array1Sq[i] !== array2[i]) {
       return false
