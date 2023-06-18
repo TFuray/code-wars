@@ -17,3 +17,4 @@ const stringToNumber = function (str) {
 }
 
 console.log(stringToNumber('53'))
+console.log(stringToNumber('-45'))
