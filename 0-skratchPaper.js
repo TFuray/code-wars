@@ -9,6 +9,7 @@ const subString = (str) => {
       consecutive.push(val)
     }
   })
+  
   return consecutive
 }
 
