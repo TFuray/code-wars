@@ -28,5 +28,19 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
+  let charMap = {};
 
+  for(const num of nums){
+    charMap[num] = charMap[num] + 1 || 1;
+  }
+
+  for (const num in charMap) {
+    if (charMap[num] > 1) {
+      return true
+    }else {
+      return false
+    }
+  }
 };
+
+console.log(containsDuplicate([1,2,3])); // true
