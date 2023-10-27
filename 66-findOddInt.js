@@ -25,6 +25,7 @@ function findOdd (A) {
 
   for(const char of A){
     charMap[char] = charMap[char] + 1 || 1
+    console.log(charMap)
   }
 
   for(const char in charMap){
@@ -37,4 +38,4 @@ function findOdd (A) {
 }
 
 
-console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))
+console.log(findOdd([1, 6, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))
