@@ -9,9 +9,9 @@
 // [8, 10, 11, 7, 3, 15, 6, 14, 5, 12]  ---> [1, 2, 4, 9, 13]
 // As this is a hardcore version, the tests are prepared for only algorithms of time complexityO(n) to pass. As the speed of each language are different, we will have different maximum lengths for the input.
 
-// Features of the random tests:   
+// Features of the random tests:
 // 1000 <= length of arrays <= 30.000.000
-// 1 <= amount of missing  numbers <= 10  
+// 1 <= amount of missing  numbers <= 10
 // amount of tests: 20
 // Enjoy it.
 
@@ -21,9 +21,9 @@ function missNumsFinder (arr) {
   let charMap = {}
   missingNums = []
   for(const char of arr){
-    charMap[char] = charMap[]
+    charMap[char] = charMap[char]
   }
 }
 
 
-console.log(missNumbsFinder( [8, 10, 11, 7, 3, 15, 6, 14, 5, 12] ), [2, 4, 9, 13])
+console.log(missNumsFinder( [8, 10, 11, 7, 3, 15, 6, 14, 5, 12] ), [2, 4, 9, 13])
