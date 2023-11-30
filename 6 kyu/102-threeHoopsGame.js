@@ -22,7 +22,40 @@
 // output will be 1100 because you get 100 for all of the letters except for the last one so thwat would be 800 points then you get the bonus from
 // getting a streak of 3 B so add 300 so you have 1100 and since you got the streak that color deactivates and the last one doesn't give any points
 
-
 const prizeCounter = (s) => {
-  //code here
+  let score = 0
+  let streak = 0
+  let lastHoop = null
+  const hoopStatus = { R: true, B: true, G: true }
+
+  for (const hoop of s) {
+    if (lastHoop === hoop) {
+      streak++
+      if (streak === 3) {
+        if (lastHoop === "R") {
+          score += 500
+        }
+        if (lastHoop === "B") {
+          score += 300
+        }
+        if (lastHoop === "G") {
+          score += 200
+        }
+        hoopStatus[lastHoop] = false
+        streak = 0
+      }
+    } else {
+      streak += 1
+    }
+    console.log(streak)
+    console.log(score)
+    console.log(lastHoop)
+    console.log(hoopStatus)
+  }
 }
+
+// console.log((prizeCounter(["R", "R", "R", "R"]), 800))
+console.log(
+  prizeCounter(["R", "R", "R", "G", "B", "R", "B", "B", "B", "R"]),
+  1700
+)
