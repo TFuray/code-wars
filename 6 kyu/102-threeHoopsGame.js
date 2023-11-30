@@ -45,13 +45,21 @@ const prizeCounter = (s) => {
         streak = 0
       }
     } else {
-      streak += 1
+      streak = 1
     }
+    if (hoopStatus[hoop]) {
+      score += 100
+      lastHoop = hoop
+    } else {
+      lastHoop = null
+    }
+
     console.log(streak)
     console.log(score)
     console.log(lastHoop)
     console.log(hoopStatus)
   }
+  return score
 }
 
 // console.log((prizeCounter(["R", "R", "R", "R"]), 800))
