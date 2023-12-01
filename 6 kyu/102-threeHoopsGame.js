@@ -58,6 +58,7 @@ const prizeCounter = (s) => {
     console.log(score)
     console.log(lastHoop)
     console.log(hoopStatus)
+    console.log(hoopStatus['R'])
   }
   return score
 }
@@ -67,3 +68,5 @@ console.log(
   prizeCounter(["R", "R", "R", "G", "B", "R", "B", "B", "B", "R"]),
   1700
 )
+// console.log((prizeCounter(['G', 'G', 'B', 'G', 'R', 'R', 'B', 'G', 'R']), 900))
+// console.log((prizeCounter(["G", "G", "G", "B", "B", "B", "G"]), 1200))
