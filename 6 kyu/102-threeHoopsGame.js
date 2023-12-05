@@ -22,45 +22,97 @@
 // output will be 1100 because you get 100 for all of the letters except for the last one so thwat would be 800 points then you get the bonus from
 // getting a streak of 3 B so add 300 so you have 1100 and since you got the streak that color deactivates and the last one doesn't give any points
 
-const prizeCounter = (s) => {
-  let score = 0
-  let streak = 0
-  let lastHoop = null
-  const hoopStatus = { R: true, B: true, G: true }
+// const prizeCounter = (s) => {
+//   let score = 0
+//   let streak = 0
+//   let lastHoop = null
+//   const hoopStatus = { R: true, B: true, G: true }
 
-  for (const hoop of s) {
-    if (lastHoop === hoop) {
-      streak++
+//   for (const hoop of s) {
+//     if (lastHoop === hoop) {
+//       streak++
+//       if (streak === 3) {
+//         if (lastHoop === "R") {
+//           score += 500
+//         }
+//         if (lastHoop === "B") {
+//           score += 300
+//         }
+//         if (lastHoop === "G") {
+//           score += 200
+//         }
+//         hoopStatus[lastHoop] = false
+//         streak = 0
+//       }
+//     } else {
+//       streak = 1
+//     }
+//     if (hoopStatus[hoop]) {
+//       score += 100
+//       lastHoop = hoop
+//     } else {
+//       lastHoop = null
+//     }
+
+//     console.log(streak)
+//     console.log(score)
+//     console.log(lastHoop)
+//     console.log(hoopStatus)
+//     console.log(hoopStatus['R'])
+//   }
+//   return score
+// }
+
+// Define a function prizeCounter that takes an array of R, G, or B as input
+function prizeCounter(array) {
+  // Initialize the score, the streak, and the active hoops
+  let score = 0;
+  let streak = 0;
+  let active = {R: true, G: true, B: true};
+
+  // Loop through the array
+  for (let i = 0; i < array.length; i++) {
+    // Get the current color
+    let color = array[i];
+
+    // Check if the hoop is active
+    if (active[color]) {
+      // Add 100 points for making it into the hoop
+      score += 100;
+
+      // Increment the streak
+      streak++;
+
+      // Check if the streak is 3
       if (streak === 3) {
-        if (lastHoop === "R") {
-          score += 500
+        // Add the bonus points based on the color
+        if (color === 'R') {
+          score += 500;
+        } else if (color === 'G') {
+          score += 200;
+        } else if (color === 'B') {
+          score += 300;
         }
-        if (lastHoop === "B") {
-          score += 300
+
+        // Deactivate the hoop and reactivate the others
+        active[color] = false;
+        for (let key in active) {
+          if (key !== color) {
+            active[key] = true;
+          }
         }
-        if (lastHoop === "G") {
-          score += 200
-        }
-        hoopStatus[lastHoop] = false
-        streak = 0
+
+        // Reset the streak
+        streak = 0;
       }
     } else {
-      streak = 1
+      // Break the streak if the hoop is inactive
+      streak = 0;
     }
-    if (hoopStatus[hoop]) {
-      score += 100
-      lastHoop = hoop
-    } else {
-      lastHoop = null
-    }
-
-    console.log(streak)
-    console.log(score)
-    console.log(lastHoop)
-    console.log(hoopStatus)
-    console.log(hoopStatus['R'])
   }
-  return score
+
+  // Return the final score
+  return score;
 }
 
 // console.log((prizeCounter(["R", "R", "R", "R"]), 800))
