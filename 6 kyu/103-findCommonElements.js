@@ -66,7 +66,8 @@ function findArr(arrA, arrB, rng, wanted) {
     return element !== undefined
   })
   return unsorted.sort((a, b) => a - b)
-}
+}h
+
 arrA = [1, -2, 7, 2, 1, 3, 4, 7, 1, 0, 2, 3, 0, 4]
 arrB = [0, 4, 2, -1, 1, 1, 1, 1, 2, 3, 3, 7, 7, 0, 4]
 rng = [-4, 4]
