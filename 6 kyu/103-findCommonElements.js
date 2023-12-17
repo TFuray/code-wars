@@ -38,16 +38,25 @@
 // You may assume that you will always receive valid entries for all the tests. Enjoy it!! Very Important: For javascript run the tests only in Node v6.6.0 and Node v6.6.0/Babel.
 
 function findArr(arrA, arrB, rng, wanted) {
-  let matches = []
-  for (let i = 0; i < arrA.length; i++) {
-    for (let a = 0; a < arrB.length; a++) {
-      if (arrA[i] === arrB[a]) {
-        if (!matches.includes(arrA[i])) {
-          matches.push(arrA[i])
-        }
-      }
+  // for (let i = 0; i < arrA.length; i++) {
+  //   for (let a = 0; a < arrB.length; a++) {
+  //     if (arrA[i] === arrB[a]) {
+  //       if (!matches.includes(arrA[i])) {
+  //         matches.push(arrA[i])
+  //       }
+  //     }
+  //   }
+  // }
+
+  let common = new Set()
+  for (let element of arrA) {
+    if (arrB.includes(element)) {
+      common.add(element)
     }
   }
+
+  let matches = Array.from(common)
+
   let final = matches.map((element) => {
     if (element >= rng[0] && element <= rng[1]) {
       if (wanted === "odd") {
@@ -66,7 +75,7 @@ function findArr(arrA, arrB, rng, wanted) {
     return element !== undefined
   })
   return unsorted.sort((a, b) => a - b)
-}h
+}
 
 arrA = [1, -2, 7, 2, 1, 3, 4, 7, 1, 0, 2, 3, 0, 4]
 arrB = [0, 4, 2, -1, 1, 1, 1, 1, 2, 3, 3, 7, 7, 0, 4]
