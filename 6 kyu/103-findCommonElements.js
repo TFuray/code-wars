@@ -38,19 +38,31 @@
 // You may assume that you will always receive valid entries for all the tests. Enjoy it!! Very Important: For javascript run the tests only in Node v6.6.0 and Node v6.6.0/Babel.
 
 function findArr(arrA, arrB, rng, wanted) {
-  // for (let i = 0; i < arrA.length; i++) {
-  //   for (let a = 0; a < arrB.length; a++) {
-  //     if (arrA[i] === arrB[a]) {
-  //       if (!matches.includes(arrA[i])) {
-  //         matches.push(arrA[i])
-  //       }
-  //     }
-  //   }
-  // }
+  let charMapA = {}
+  let charMapB = {}
 
+  for (const num of arrA) {
+    charMapA[num] = charMapA[num] + 1 || 1
+  }
+  for (const num of arrB) {
+    charMapB[num] = charMapB[num] + 1 || 1
+  }
+
+  let tempA = new Set()
+  let tempB = new Set()
+
+  for (const num in charMapA) {
+    if (charMapA[num] > 1) tempA.add(num)
+  }
+  for (const num in charMapB) {
+    if (charMapB[num] > 1) tempB.add(num)
+  }
+  let matchesA = Array.from(tempA)
+  let matchesB = Array.from(tempB)
   let common = new Set()
-  for (let element of arrA) {
-    if (arrB.includes(element)) {
+
+  for (let element of matchesA) {
+    if (matchesB.includes(element)) {
       common.add(element)
     }
   }
@@ -61,12 +73,12 @@ function findArr(arrA, arrB, rng, wanted) {
     if (element >= rng[0] && element <= rng[1]) {
       if (wanted === "odd") {
         if (element % 2 != 0) {
-          return element
+          return parseInt(element)
         }
       }
       if (wanted === "even") {
         if (element % 2 == 0) {
-          return element
+          return parseInt(element)
         }
       }
     }
