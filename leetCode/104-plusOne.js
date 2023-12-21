@@ -2,8 +2,6 @@
 
 // Increment the large integer by one and return the resulting array of digits.
 
-
-
 // Example 1:
 
 // Input: digits = [1,2,3]
@@ -26,9 +24,28 @@
 // Incrementing by one gives 9 + 1 = 10.
 // Thus, the result should be [1,0].
 
-
 // Constraints:
 
 // 1 <= digits.length <= 100
 // 0 <= digits[i] <= 9
 // digits does not contain any leading 0's.
+
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function (digits) {
+  console.log(digits[digits.length - 1])
+  let digit = digits.pop()
+  if (Number(digit) !== 9) {
+    digit = Number(digit) + 1
+    digits.push(digit)
+    return digits
+  } else {
+    digits.push(0)
+    digits[digits.length-2] = Number(digits[digits.length-2]) + 1
+  }
+  return digits
+}
+
+console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 7, 9]))
