@@ -2,8 +2,6 @@
 
 // Note that you must do this in-place without making a copy of the array.
 
-
-
 // Example 1:
 
 // Input: nums = [0,1,0,3,12]
@@ -13,19 +11,19 @@
 // Input: nums = [0]
 // Output: [0]
 
-
 var moveZeroes = function (nums) {
-    const length = nums.length
-    nums.filter((num) => num != 0)
-    const newLength = nums.length
-  // return nums.map((el, index) => {
-  //   if (el !== 0) {
-  //     return el
-  //   } else if(el === 0) {
-  //     return nums.splice(index, 1) && nums.push('0')
-  //   }
-  // })
+  let counter = 0
+  const removeZeros = (value, index, arr) => {
+    if (value === 0) {
+      counter = counter + 1
+      arr.splice(index, 1)
+      return true
+    }
+    return false
+  }
+  const x = nums.filter(removeZeros)
+  return nums
+
 }
 
-
-console.log(moveZeroes([0,1,0,3,12]))
+console.log(moveZeroes([0, 1, 0, 3, 12]))
