@@ -23,7 +23,6 @@ var moveZeroes = function (nums) {
   }
   const x = nums.filter(removeZeros)
   return nums
-
 }
 
 console.log(moveZeroes([0, 1, 0, 3, 12]))
