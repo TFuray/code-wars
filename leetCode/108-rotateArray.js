@@ -26,7 +26,12 @@
 // 0 <= k <= 105
 
 var rotate = function (nums, k) {
+  k = k % nums.length
 
+  const rotated = nums.splice(nums.length - k)
+  nums.unshift(...rotated)
+
+  return nums
 }
 
 
