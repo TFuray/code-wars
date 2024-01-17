@@ -84,7 +84,7 @@ const getNames = (array) => {
   return nameArr
 }
 
-console.log(getNames(characters))
+// console.log(getNames(characters))
 
 // 2. REDUCE:
 
@@ -93,7 +93,7 @@ console.log(getNames(characters))
 // Get the total number of characters in all the character names
 // Get the total number of characters by eye color (hint. a map of eye color to count)
 
-const totalMass = characters.reduce()
+// const totalMass = characters.reduce()
 
 // 3. FILTER:
 
@@ -126,3 +126,23 @@ const totalMass = characters.reduce()
 // Is there at least one character taller than 200?
 // Is there at least one character that has mass less than 50?
 // Answer
+
+
+function sumPairs(ints, s) {
+  let hash = {}
+
+  const maxElements = ints.length
+
+  for (let i = 0; i < maxElements; i++) {
+    if (hash[s - ints[i]]) {
+      console.log(i)
+      return [s - ints[i], ints[i]]
+    } else {
+      hash[ints[i]] = 1
+    }
+    console.log(hash[ints[i]])
+  }
+  return undefined
+}
+
+console.log(sumPairs([5, 9, 13, -3], 10))
