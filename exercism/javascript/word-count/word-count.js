@@ -4,5 +4,9 @@
 //
 
 export const countWords = () => {
-  throw new Error('Remove this statement and implement this function');
+  let str = "That's the password: 'PASSWORD 123'!, cried the Special Agent.\nSo I fled."
+const result = str.split(/[,.\s]/)
+console.log(result)
 };
+
+console.log(countWords())
