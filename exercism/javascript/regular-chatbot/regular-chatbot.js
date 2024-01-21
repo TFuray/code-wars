@@ -18,8 +18,12 @@ export function isValidCommand(command) {
  * @returns {string} The message without the emojis encryption
  */
 export function removeEmoji(message) {
-  throw new Error('Please implement the removeEmoji function');
+  const emoji = new RegExp(/emoji\d{4}/gi)
+  return message.replace(emoji, "")
 }
+// console.log(
+//   removeEmoji("I love playing videogames emoji3465 it's one of my hobbies")
+// )
 
 /**
  * Given a certain phone number, help the chatbot recognize whether it is in the correct format.
@@ -28,9 +32,14 @@ export function removeEmoji(message) {
  * @returns {string} the Chatbot response to the phone Validation
  */
 export function checkPhoneNumber(number) {
-  throw new Error('Please implement the checkPhoneNumber function');
+  const regexPattern = /\(\+\d{2}\) \d{3}-\d{3}-\d{3}/
+  if (regexPattern.test(number)) {
+    return "Thanks! You can now download me to your phone."
+  } else {
+    return `Oops, it seems like I can't reach out to ${number}`
+  }
 }
-
+// console.log(checkPhoneNumber("(+34) 659-771-594"))
 /**
  * Given a certain response from the user, help the chatbot get only the URL.
  *
@@ -38,9 +47,11 @@ export function checkPhoneNumber(number) {
  * @returns {string[] | null} all the possible URL's that the user may have answered
  */
 export function getURL(userInput) {
-  throw new Error('Please implement the userInput function');
-}
+  const regexPattern = /\b(?:https?:\/\/)?(?:www\.)?(\S+\.\S+)\b/g
+  return userInput.match(regexPattern)
 
+}
+// console.log(getURL("I learned a lot from exercism.com and reddit.com"))
 /**
  * Greet the user using the full name data from the profile.
  *
@@ -48,5 +59,19 @@ export function getURL(userInput) {
  * @returns {string} Greeting from the chatbot
  */
 export function niceToMeetYou(fullName) {
-  throw new Error('Please implement the fullName function');
+    // Use a regular expression to extract first and last names
+    const nameRegex = /([^,]+),\s*(\S+)/
+    const match = fullName.match(nameRegex)
+    
+    if (match) {
+      // Capitalize the first letter of the first and last names
+      const firstName = match[2][0].toUpperCase() + match[2].substring(1)
+      const lastName = match[1][0].toUpperCase() + match[1].substring(1)
+
+      // Return the formatted string
+      return `Nice to meet you, ${firstName} ${lastName}`
+    } else {
+      // Handle the case where the regular expression doesn't match
+      return "Unable to determine name format. Nice to meet you!"
+    }
 }
