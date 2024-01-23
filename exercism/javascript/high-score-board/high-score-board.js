@@ -1,4 +1,7 @@
 /// <reference path="./global.d.ts" />
+
+import { normalize } from "path"
+
 // @ts-check
 
 /**
@@ -23,7 +26,9 @@ export function createScoreBoard() {
  */
 // @ts-ignore
 export function addPlayer(scoreBoard, player, score) {
-  throw new Error('Please implement the addPlayer function');
+  const key = player
+  scoreBoard[key] = score
+  return scoreBoard
 }
 
 /**
@@ -35,7 +40,9 @@ export function addPlayer(scoreBoard, player, score) {
  */
 // @ts-ignore
 export function removePlayer(scoreBoard, player) {
-  throw new Error('Please implement the removePlayer function');
+  const key = player
+  delete scoreBoard[key]
+  return scoreBoard
 }
 
 /**
@@ -48,7 +55,8 @@ export function removePlayer(scoreBoard, player) {
  */
 // @ts-ignore
 export function updateScore(scoreBoard, player, points) {
-  throw new Error('Please implement the updateScore function');
+  scoreBoard[player] = scoreBoard[player] + points
+  return scoreBoard
 }
 
 /**
@@ -59,7 +67,10 @@ export function updateScore(scoreBoard, player, points) {
  */
 // @ts-ignore
 export function applyMondayBonus(scoreBoard) {
-  throw new Error('Please implement the applyMondayBonus function');
+  for (let key in scoreBoard) {
+    scoreBoard[key] = scoreBoard[key] + 100
+  }
+  return scoreBoard
 }
 
 /**
@@ -70,5 +81,5 @@ export function applyMondayBonus(scoreBoard) {
  */
 // @ts-ignore
 export function normalizeScore(params) {
-  throw new Error('Please implement the normalizeScore function');
+  return params.normalizeFunction(params.score)
 }
