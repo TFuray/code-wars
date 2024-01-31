@@ -11,7 +11,7 @@
 
 
 function binaryCleaner(arr) {
-  //
+  
 }
 
 
