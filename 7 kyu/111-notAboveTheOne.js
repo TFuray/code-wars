@@ -23,14 +23,14 @@ function binaryCleaner(arr) {
   return [lessThan, greaterThan]
 }
 
-// console.log(
-//   binaryCleaner([0, 1, 2, 1, 0, 2, 1, 1, 1, 0, 4, 5, 6, 2, 1, 1, 0]),
-//   [
-//     [0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0],
-//     [2, 5, 10, 11, 12, 13],
-//   ],
-//   "Should return"
-// )
-// console.log(binaryCleaner([0,1,1,2,0]), [ [ 0, 1, 1, 0 ], [ 3 ] ], "Should return")
-// console.log(binaryCleaner([2,2,0]), [ [ 0 ], [ 0, 1 ] ], "Should return: ")
-// console.log(binaryCleaner([0,1,2,1,0,2,1,1]), [ [ 0, 1, 1, 0, 1, 1 ], [ 2, 5 ] ], "Should return")
+console.log(
+  binaryCleaner([0, 1, 2, 1, 0, 2, 1, 1, 1, 0, 4, 5, 6, 2, 1, 1, 0]),
+  [
+    [0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0],
+    [2, 5, 10, 11, 12, 13],
+  ],
+  "Should return"
+)
+console.log(binaryCleaner([0,1,1,2,0]), [ [ 0, 1, 1, 0 ], [ 3 ] ], "Should return")
+console.log(binaryCleaner([2,2,0]), [ [ 0 ], [ 0, 1 ] ], "Should return: ")
+console.log(binaryCleaner([0,1,2,1,0,2,1,1]), [ [ 0, 1, 1, 0, 1, 1 ], [ 2, 5 ] ], "Should return")
