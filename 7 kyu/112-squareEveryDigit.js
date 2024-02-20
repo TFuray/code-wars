@@ -10,5 +10,13 @@
 
 
 function squareDigits(num) {
-  return 0
+  let arr = []
+  let numArr = num.toString().split('')
+  numArr.map((value) => {
+    arr.push(parseInt(value) * parseInt(value))
+  })
+  return parseInt(arr.join(''))
 }
+
+
+console.log(squareDigits(9119))
