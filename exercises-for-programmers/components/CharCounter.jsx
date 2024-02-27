@@ -9,6 +9,7 @@ const charCounter = () => {
 
   const handleChange = (e) => {
      setInput(e.target.value)
+    const nextCount = input.length + 1
     setCount(input.length + 1)
     // setShow(true)
   }
@@ -17,8 +18,9 @@ const charCounter = () => {
     <>
       <div className="flex flex-col">
         <label>
-          Input Text to count characters:
+          Input Text to count characters: {' '}
           <input
+          className='bg-gray-300 rounded-md'
             value={input}
             onChange={handleChange}
           />
@@ -30,7 +32,7 @@ const charCounter = () => {
         {input !== '' && (
           <div>
             <p>
-              {input} has {count} characters
+              '{input}' has {count} characters
             </p>
           </div>
         )}
