@@ -29,8 +29,6 @@
 
 function chessBoard(rows, columns) {
   let board = []
-
-  
 }
 
 console.log(chessBoard(6,4))
