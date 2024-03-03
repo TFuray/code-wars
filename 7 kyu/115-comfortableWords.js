@@ -10,7 +10,7 @@
 // "yams"  -->  true
 // "test"  -->  false
 
-DESCRIPTION: function comfortableWord(word) {
+function comfortableWord(word) {
   const left = [
     "q",
     "w",
@@ -28,19 +28,29 @@ DESCRIPTION: function comfortableWord(word) {
     "v",
     "b",
   ]
-  const right = ["y", "u", "i", "o", "p", "h", "j", "k", "l", "n", "m"]
-  word = word.split("")
-  let last
+  let pattern = []
+  let comfortable = []
 
-  word.map((letter) => {
+  word.split("").map((letter) => {
     if (left.includes(letter)) {
-      last = 0
-      
+      pattern.push("l")
+    } else {
+      pattern.push("r")
     }
   })
 
+  pattern.map((value, index, array) => {
+    if (value === array[index - 1]) {
+      comfortable.push(1)
+    } else {
+      comfortable.push(0)
+    }
+  })
 
+  if (comfortable.includes(1)) {
+    return false
+  } else return true
 }
 
-comfortableWord("yams")
-comfortableWord("test")
+console.log(comfortableWord("test"))
+console.log(comfortableWord("yams"))
