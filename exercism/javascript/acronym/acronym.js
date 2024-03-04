@@ -7,8 +7,7 @@ export const parse = (phrase) => {
   let acronym = []
   let words = phrase.split("-")
   words = words.join(" ").split(" ")
-  console.log(words)
-
+  
   words.map((word, index) => {
     console.log(word[0])
     if (word === '') {
@@ -21,8 +20,3 @@ export const parse = (phrase) => {
 
   return acronym.join("").toUpperCase()
 }
-
-// console.log(parse("As Soon As Possible"))
-// console.log(parse("Liquid-crystal display"))
-// console.log(parse("Thank George It's Friday!"))
-console.log(parse('Something - I made up from thin air'))
