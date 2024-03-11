@@ -22,16 +22,15 @@ function trim(str, size) {
   } else if (strLength > size && size <= 3) {
     let array = str.split("")
     let trim = []
-    console.log(array)
     trim = array.slice(0, size)
     return `${trim.join("")}...`
+
   } else if (strLength > size) {
     let array = str.split("")
     let trim = []
-    console.log(array)
-    trim = array.slice(0, size-3)
+    trim = array.slice(0, size - 3)
     return `${trim.join("")}...`
   }
 }
 
-console.log(trim("He", 1))
+console.log(trim("help", 2))
