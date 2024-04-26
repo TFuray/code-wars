@@ -21,5 +21,5 @@ var numberFormat = function (number) {
   }
 }
 
-// console.log(numberFormat(100000))
-// console.log(numberFormat(-885678545))
+console.log(numberFormat(100000))
+console.log(numberFormat(-885678545))
