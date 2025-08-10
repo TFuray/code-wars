@@ -1,4 +1,4 @@
-function minMax(arr) {
+// function minMax(arr) {
 //   let min = arr[0]
 //   let max = arr[0]
 
