@@ -11,6 +11,9 @@
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 function duplicateCount(text) {
-  
+  let array = text.split('')
+  console.log(array.sort())
 
 }
+
+duplicateCount('test')
