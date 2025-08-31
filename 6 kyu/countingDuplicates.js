@@ -12,6 +12,7 @@
 
 function duplicateCount(text) {
   let array = text.split('')
+  
   console.log(array.sort())
 
 }
